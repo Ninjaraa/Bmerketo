@@ -1,0 +1,46 @@
+﻿@model ProductsIndexViewModel
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<section class="all-products">
+    <div class="new-product">
+        @if (User.IsInRole("Sysadmin"))
+        {
+            <a class="link" asp-action="register" asp-controller="products"><i class="fa-solid fa-plus"></i>Add new product</a>
+        }
+    </div>
+    <div class="container">
+            @foreach (var product in Model.ProductItems)
+            {
+                <div class="card">
+                    <img class="card-img-top" src="data:@(product.ImageMimeType);base64,@(product.ImageBase64)" />
+                    <div class="card-body">
+                        <h5 class="card-title">@product.ProductName</h5>
+                        <p class="card-category">@product.Category.Category</p>
+                        <div class="card-prices">
+                            @if (product.Price?.DiscountPrice != null)
+                            {
+                                <span class="discounted-price">@product.Price.DiscountPrice</span>
+                            }
+
+                            @if (product.Price?.OriginalPrice != null)
+                            {
+                                <span class="original-price">@product.Price.OriginalPrice</span>
+                            }
+
+                            @if (product.Price?.OrdinaryPrice != null)
+                            {
+                                <span class="ordinary-price">@product.Price.OrdinaryPrice</span>
+                            }
+                        </div>
+                        @if (User.IsInRole("Sysadmin"))
+                        {
+                            <a href="@Url.Action("Edit", new { sku = product.SKU })">Edit</a>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+</section>

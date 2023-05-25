@@ -1,0 +1,30 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+// Core
+@import "./core/variables";
+@import "./core/mixins";
+@import "./core/base";
+@import "./components/buttons";
+
+// Navigation
+@import "./components/navigation/header";
+@import "./components/navigation/footer";
+
+// Components
+@import "./components/carditem.scss";
+@import "./components/map";
+@import "./components/newsletter";
+@import "./components/breadcrumb";
+@import "./components/forms";
+
+// Sections
+@import "./sections/showcase.scss";
+@import "./sections/collection";
+@import "./sections/sales";
+@import "./sections/topsell";
+@import "./sections/topsellposts.scss";
+@import "./sections/productdetails";
+@import "./sections/account.scss";
+@import "./sections/admin.scss";
+@import "./sections/allproducts.scss";

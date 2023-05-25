@@ -1,0 +1,91 @@
+﻿.generic-card-item {
+    border: none;
+    background-color: $color-white;
+    border-radius: $zero;
+    border: $zero;
+    margin-top: $spacing-large;
+
+    .custom-img-size {
+        height: auto;
+        width: 300px;
+    }
+
+    img,
+    .card-img {
+        border-radius: $zero;
+    }
+
+    .card-body {
+        text-align: center;
+
+        @include l-device {
+            text-align: left;
+        }
+
+        .card-title {
+            font-family: $font-poppins;
+            font-size: $font-size-18;
+            color: $color-dark-1;
+            font-weight: $font-weight-medium;
+            padding-top: $spacing-small;
+        }
+
+        .card-title-center {
+            font-family: $font-poppins;
+            font-size: $font-size-18;
+            color: $color-dark-1;
+            font-weight: $font-weight-medium;
+            padding-top: $spacing-small;
+            text-align: center;
+        }
+
+        .card-text {
+            padding-top: $spacing-small;
+
+            .card-ordinary-price {
+                font-size: $font-size-base;
+                color: $color-dark-3;
+                font-size: $font-size-base;
+                text-decoration: none;
+                display: inline-block;
+            }
+        }
+
+        .card-text-with-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: $spacing-small $spacing-xsmall $zero;
+
+            .card-original-price {
+                color: $color-dark-3;
+                font-size: $font-size-base;
+                text-decoration: line-through;
+
+                @include l-device {
+                    margin-right: 0;
+                }
+            }
+
+            .card-discount-price {
+                color: $color-dark-3;
+                font-size: $font-size-base;
+
+                @include l-device {
+                    width: 50%;
+                    margin-right: 0;
+                }
+            }
+
+            i {
+                justify-content: flex-end;
+                align-self: flex-start;
+                font-size: $font-size-base;
+                line-height: none;
+                padding: $zero;
+                margin: $zero;
+                color: $color-light;
+            }
+        }
+    }
+}

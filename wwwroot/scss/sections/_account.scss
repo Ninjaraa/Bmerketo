@@ -1,0 +1,73 @@
+﻿.profile-section {
+    margin-top: $spacing-medium;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        width: 100%;
+        margin-bottom: 50px;
+
+        .profile-img {
+
+            img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                margin-bottom: $spacing-small;
+            }
+
+            .change-img {
+
+                input[type="file"] {
+                    display: none;
+                }
+            }
+        }
+
+        .profile-info {
+            margin-top: $spacing-large;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            .input-field {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0 20px 25px;
+                width: 300px;
+                height: 110px;
+
+                .profile-label,
+                .form-label {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                    color: $font-color-dark;
+                }
+
+                .profile-input {
+                    border: none;
+                    border-bottom: 1px solid $font-color-lighter;
+                    font-size: 16px;
+                    padding: 5px 0;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .profile-actions {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}

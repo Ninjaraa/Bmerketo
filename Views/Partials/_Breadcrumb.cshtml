@@ -1,0 +1,21 @@
+﻿@model BreadCrumbViewModel
+
+@if (Model != null)
+{
+    <section class="breadcrumb-section">
+        <div class="container">
+            <div class="content">
+                <h1>@Model.PageTitle</h1>
+                <ul>
+                    <li>
+                        <a href="@Model.Home">Home</a>
+                        </li>
+                    <li>
+                        <a href="@Model.PageTitle">@Model.PageTitle</a>
+                            </li>
+                </ul>
+        </div>
+    </div>
+</section>
+
+}

@@ -1,0 +1,36 @@
+﻿@model SalesViewModel
+
+@if (Model != null)
+{
+    <section class="sales-section">
+        <div class="container">
+            <div class="sales-grid">
+                @if (Model.ProductItems != null && Model.ProductItems.Count >= 2)
+                {
+                    <div class="product" id="@Model.ProductItems[0].Id">
+                        <partial name="/Views/Partials/_Card.cshtml" model="@Model.ProductItems[0]" />
+                    </div>
+                    <div class="generic-card-item">
+                        <div class="card-body">
+                            <p class="sales-headline">UP TO SELL</p>
+                            <p class="sales-title">50% OFF</p>
+                            <p class="sales-ingress">Get the Best Price</p>
+                            <p class="sales-text">
+                                Get the best daily offer et accusam et justo duo dolores et ea rebum. Stet clita
+                                kasd gubergren no sea taki.
+                            </p>
+                            <a class="sales-link" href="#">Discover more</a>
+                        </div>
+                    </div>
+                    <div class="product" id="@Model.ProductItems[1].Id">
+                        <partial name="/Views/Partials/_Card.cshtml" model="@Model.ProductItems[1]" />
+                    </div>
+                }
+                else
+                {
+                    <p>No card items found.</p>
+                }
+            </div>
+        </div>
+    </section>
+}

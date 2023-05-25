@@ -1,0 +1,65 @@
+﻿@model UserEditViewModel
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<section class="profile-section">
+    <div class="container">
+        <div class="profile-img">
+            <img src="data:@Model.ImageMimeType;base64,@Model.ContentType" alt="Profile picture" />
+        </div>
+
+        <form asp-action="EditUser" asp-controller="Admin" method="post">
+        <div class="profile-info">
+            <div class="input-field">
+                <label asp-for="FirstName" class="profile-label">First Name</label>
+                <input asp-for="FirstName" class="profile-input" type="text" value="@Model.FirstName" />
+            </div>
+            <div class="input-field">
+                <label asp-for="LastName" class="profile-label">Last Name</label>
+                <input asp-for="LastName" class="profile-input" type="text" value="@Model.LastName" />
+            </div>
+            <div class="input-field">
+                <label asp-for="Email" class="profile-label">Email</label>
+                <input asp-for="Email" class="profile-input" type="email" value="@Model.Email" />
+            </div>
+            <div class="input-field">
+                <label asp-for="PhoneNumber" class="profile-label">Phone Number</label>
+                <input asp-for="PhoneNumber" class="profile-input" type="text" value="@Model.PhoneNumber" />
+            </div>
+            <div class="input-field">
+                <label asp-for="StreetName" class="profile-label">Street Name</label>
+                <input asp-for="StreetName" class="profile-input" type="text" value="@Model.StreetName" />
+            </div>
+            <div class="input-field">
+                <label asp-for="PostalCode" class="profile-label">Postal Code</label>
+                <input asp-for="PostalCode" class="profile-input" type="text" value="@Model.PostalCode" />
+            </div>
+            <div class="input-field">
+                <label asp-for="City" class="profile-label">City</label>
+                <input asp-for="City" class="profile-input" type="text" value="@Model.City" />
+            </div>
+            <div class="input-field">
+                <label asp-for="Company" class="profile-label">Company</label>
+                <input asp-for="Company" class="profile-input" type="text" value="@Model.Company" />
+            </div>
+            <div class="input-field">
+                <label asp-for="NewPassword" class="profile-label">New Password</label>
+                <input asp-for="NewPassword" class="profile-input" type="password" />
+            </div>
+            <div class="input-field">
+                <label asp-for="ConfirmNewPassword" class="profile-label">Confirm New Password</label>
+                <input asp-for="ConfirmNewPassword" class="profile-input" type="password" />
+            </div>
+                <div class="input-field">
+                    <label asp-for="Roles" class="form-label">Roles</label>
+                <select asp-for="Roles" asp-items="@Model.AvailableRoles" class="form-control" multiple></select>
+           </div>
+            <div class="profile-actions">
+                <button class="change-info-btn">Save changes</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</section>

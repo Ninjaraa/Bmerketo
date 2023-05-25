@@ -1,0 +1,54 @@
+.collection-section {
+    margin-top: $spacing-large;
+    background-color: $color-white;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            text-align: center;
+            font-family: $font-poppins;
+            font-size: $font-size-40;
+            font-weight: $font-weight-semibold;
+            margin-bottom: $spacing-small;
+        }
+
+        .categories {
+            display: none;
+            justify-content: center;
+            list-style: none;
+            margin: $zero;
+            padding: $zero;
+
+            @include l-device {
+                display: flex;
+            }
+
+            .category-item {
+                color: $font-color-list;
+                margin-right: $spacing-xsmall;
+
+                & + li::before {
+                    content: "/";
+                    margin-right: $spacing-xsmall;
+                }
+            }
+        }
+    }
+
+    .collection-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        @include l-device {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+}

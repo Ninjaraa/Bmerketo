@@ -1,0 +1,92 @@
+// Site width
+$max-width: 1920px;
+$width: 1110px;
+
+// Site colors
+$color-theme: #FAFAFA;
+$color-theme-gray: #F3F2F2;
+$color-gray: #CCCCCC;
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-red: #FA3150;
+$color-green: #92B8B9;
+$color-yellow: #F9C936;
+$color-green: #92BBB9;
+
+$color-dark-1: #202020;
+$color-dark-3: #636363;
+$color-dark-4: #343434;
+$color-dark-5: #FAFAFA;
+
+$color-light: #AAAAAA;
+$font-color-dark: #292929;
+$font-color-list: #626262;
+$border-color: #DDDDDD;
+
+$font-color-lighter: #E1E1E1;
+$font-color-light: #AEAEAE;
+$font-color-light-1: #B0B0B0;
+
+$color-pink: #FAEFEF;
+
+// Font family
+$font-roboto: 'Roboto', sans-serif;
+$font-alata: 'Alata', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
+$font-playfair: 'Playfair', serif;
+
+// Font weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+
+// Font sizes
+$font-size-button: 0.875rem;
+$font-size-12: 0.75rem;
+$font-size-14: 0.8rem;
+$font-size-15: 0.938rem;
+$font-size-base: 16px;
+$font-size-17: 1.0625rem;
+$font-size-18: 1.125rem;
+$font-size-19: 1.188rem;
+$font-size-20: 1.25rem;
+$font-size-21: 1.33rem;
+$font-size-22: 1.375rem;
+$font-size-24: 1.5rem;
+$font-size-32: 2rem;
+$font-size-36: 2.25rem;
+$font-size-40: 2.5rem;
+$font-size-48: 3rem;
+$font-size-60: 3.75rem;
+$font-size-80: 5rem;
+
+// Border radius
+$border-radius-xsmall: 6px;
+$border-radius-small: 8px;
+$border-radius-medium: 25px;
+$border-radius-rounded: 50%;
+
+// Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-mobile-max-width: 540px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-max-width: 720px;
+$breakpoint-l-device: 992px;
+$breakpoint-l-device-max-width: 960px;
+$breakpoint-desktop: 1200px;
+$breakpoint-desktop-max-width: 1140px;
+$breakpoint-desktop-l: 1400px;
+
+// Spacing
+$spacing-xsmall: 0.5rem;
+$spacing-small: 1rem;
+$spacing-smedium: 1.25rem;
+$spacing-medium: 2rem;
+$spacing-large: 3.125rem;
+$spacing-xlarge: 4rem;
+
+// Reusables
+$zero: 0;
+$lineheight: 1.5;

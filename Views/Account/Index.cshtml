@@ -1,0 +1,47 @@
+﻿@model UserViewModel
+
+<section class="profile-section">
+    <div class="container">
+        <div class="profile-img">
+            <img src="data:@Model.ImageMimeType;base64,@Model.ContentType" alt="Profile picture" />
+        </div>
+        <div class="profile-info">
+            <div class="input-field">
+                <label asp-for="FirstName" class="profile-label">First Name</label>
+                <div class="profile-value">@Model.FirstName</div>
+            </div>
+            <div class="input-field">
+                <label asp-for="LastName" class="profile-label">Last Name</label>
+                <div class="profile-value">@Model.LastName</div>
+            </div>
+            <div class="input-field">
+                <label asp-for="Email" class="profile-label">Email</label>
+                <div class="profile-value">@Model.Email</div>
+            </div>
+            <div class="input-field">
+                <label asp-for="PhoneNumber" class="profile-label">Phone Number</label>
+                <div class="profile-value">@Model.PhoneNumber</div>
+            </div>
+
+            <div class="input-field">
+                <label asp-for="StreetName" class="profile-label">Street Name</label>
+                <div class="profile-value">@Model.StreetName</div>
+            </div>
+            <div class="input-field">
+                <label asp-for="PostalCode" class="profile-label">Postal Code</label>
+                <div class="profile-value">@Model.PostalCode</div>
+            </div>
+            <div class="input-field">
+                <label asp-for="City" class="profile-label">City</label>
+                <div class="profile-value">@Model.City</div>
+            </div>
+            <div class="input-field">
+                <label asp-for="Company" class="profile-label">Company</label>
+                <div class="profile-value">@Model.Company</div>
+            </div>
+            <div class="profile-actions">
+                <a href="@Url.Action("EditProfile", new { id = Model.Id })" class="change-info-btn">Edit Profile Information</a>
+            </div>
+        </div>
+    </div>
+    </section>

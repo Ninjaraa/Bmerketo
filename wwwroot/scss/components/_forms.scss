@@ -1,0 +1,61 @@
+.registerform,
+.contactform,
+.loginform {
+    .container {
+
+        h1 {
+            margin-top: $spacing-small;
+            font-weight: $font-weight-regular;
+            font-family: $font-poppins;
+            font-size: $font-size-20;
+            color: $font-color-light;
+        }
+
+        label {
+            font-family: $font-roboto;
+            font-size: $font-size-base;
+            color: $font-color-dark;
+            padding: $spacing-xsmall $zero $spacing-xsmall $zero;
+        }
+
+        .form-control-file {
+            padding: $spacing-small $zero $spacing-small $zero;
+            background-color: $color-white;
+            border: none;
+        }
+
+        .form-check-input:checked {
+            background-color: $font-color-lighter;
+            color: $font-color-light;
+            border: none;
+            padding: $spacing-xsmall $zero $spacing-xsmall $zero;
+        }
+
+        .form-control:focus {
+            border-color: $font-color-lighter;
+        }
+
+        textarea,
+        input {
+            font-size: $font-size-base;
+            border: 1px solid $font-color-lighter;
+            background-color: $color-theme-gray;
+            outline: 0;
+
+            &:focus {
+                border: 1px solid $color-theme-gray;
+                background-color: $color-theme-gray;
+                box-shadow: 0 0 0 0.2rem rgba(192, 192, 192, 0.25);
+            }
+        }
+
+        .invalid {
+            border: 1px solid $color-red !important;
+        }
+
+        .form-check-input[type=checkbox] {
+            margin-top: $spacing-xsmall;
+            border-radius: 0.25em;
+        }
+    }
+}

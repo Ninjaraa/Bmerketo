@@ -1,0 +1,43 @@
+﻿  <header>
+    <div class="container">
+      <div class="logo"><img src="/images/logotype.svg" alt="bmerketo"></div>
+      <nav id="menu" class="menu-links">
+
+        <a class="link" asp-action="index" asp-controller="home">HOME</a>
+            <a class="link" asp-action="index" asp-controller="products">PRODUCTS</a>
+            <a class="link" asp-action="index" asp-controller="contact">CONTACTS</a>
+
+      </nav>
+      <nav class="menu-icons">
+            <a class="link" asp-action="index" asp-controller="search"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+            @if (signInManager.IsSignedIn(User))
+            {
+                <a class="link me-5" asp-action="index" asp-controller="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="link" asp-action="index" asp-controller="account">@User.Identity?.Name</a>
+
+                @if (User.IsInRole("Sysadmin"))
+                {
+                    <a class="link" asp-action="index" asp-controller="admin">Admin</a>
+                }
+
+                <a class="link" asp-action="index" asp-controller="logout">Logout</a>
+            }
+            else
+            {
+                <a class="link" asp-action="index" asp-controller="login">Login</a>
+                <a class="link" asp-action="index" asp-controller="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            }
+
+
+            <a class="link" asp-action="index" asp-controller="register">Register</a>
+            
+      </nav>
+        <div class="toggle">
+            <button class="btn-toggle btn-outline-white" data-option="toggle" data-target="#menu">
+                <i id="icon" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+<div class="spacer"></div>

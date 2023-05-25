@@ -1,0 +1,36 @@
+.topsell-section {
+    background-color: $color-white;
+
+    h1 {
+        text-align: center;
+        font-family: $font-poppins;
+        font-size: $font-size-32;
+        font-weight: $font-weight-semibold;
+        margin: $spacing-medium $zero $spacing-medium $zero;
+    }
+
+    .container-fluid {
+        padding-left: $spacing-medium;
+        padding-right: $spacing-medium;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include l-device {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    .topsell-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include l-device {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}

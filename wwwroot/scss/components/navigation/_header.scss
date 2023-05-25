@@ -1,0 +1,165 @@
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    .spacer {
+        height: 80px;
+        width: 100%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo toggle";
+
+        @include l-device {
+            grid-template-columns: 4fr 4fr;
+            grid-template-areas: "logo menulinks";
+        }
+
+        @include desktop {
+            grid-template-columns: 4fr 4fr 1fr;
+            grid-template-areas: "logo menulinks menuicons";
+        }
+    }
+
+    .logo {
+        grid-area: logo;
+        display: flex;
+        align-items: center;
+        font-size: 27px;
+        font-weight: $font-weight-bold;
+        color: $color-dark-1;
+
+        img {
+            margin-right: 5px;
+        }
+    }
+
+    .menu-links {
+        grid-area: menulinks;
+        background-color: $font-color-dark;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 0vw;
+        padding-top: 80px;
+        transform: translateX(0%);
+        transition: all 0.25s;
+        font-size: 20px;
+        overflow: hidden;
+
+
+        @include l-device {
+            position: static;
+            width: 100%;
+            font-size: 16px;
+            padding: 0;
+            background-color: transparent;
+            color: $font-color-dark;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        @include desktop {
+            margin-right: 20px;
+        }
+
+        .link {
+            font-family: $font-poppins;
+            border: 1px solid $color-dark-1;
+            color: $color-white;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            text-decoration: none;
+            font-weight: $font-weight-medium;
+
+            &:hover {
+                background-color: $color-dark-1;
+            }
+
+            @include l-device {
+                color: $color-black;
+                border: none;
+                padding: 0;
+                margin: 0 0 0 30px;
+                justify-content: right;
+                font-size: 16px;
+
+                &:hover {
+                    background-color: transparent;
+                    color: $color-red;
+                }
+            }
+        }
+    }
+
+    .menu-icons {
+        grid-area: menuicons;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background-color: $font-color-dark;
+        color: $color-white;
+
+        @include desktop {
+            position: static;
+            padding: 0;
+            background-color: $color-white;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .link {
+            font-family: $font-poppins;
+            color: $color-white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+
+            &:hover {
+                color: $font-color-light;
+            }
+
+            @include desktop {
+                position: static;
+                color: $font-color-light;
+                margin: 0 0 0 25px;
+                font-size: 18px;
+
+                &:hover {
+                    color: $color-red;
+                }
+            }
+        }
+    }
+
+    .toggle {
+        grid-area: toggle;
+        position: relative;
+        display: block;
+        text-align: right;
+        z-index: 1;
+
+        @include l-device {
+            display: none;
+        }
+    }
+}

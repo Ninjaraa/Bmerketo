@@ -1,0 +1,65 @@
+.topsellpost-section {
+    background-color: $color-white;
+
+    .topsell-posts {
+        margin-top: $spacing-medium;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            @include l-device {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .card-description {
+                padding-top: $spacing-xsmall;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                @include l-device {
+                    text-align: left;
+                    justify-content: flex-start;
+                }
+
+                .post {
+                    text-align: center;
+                    color: $color-dark-3;
+                    font-size: $font-size-base;
+
+                    @include l-device {
+                        text-align: left;
+                    }
+                }
+
+                .author {
+                    text-align: center;
+                    color: $font-color-light-1;
+                    font-size: $font-size-12;
+                    padding-right: $spacing-small;
+
+                    @include l-device {
+                        text-align: left;
+                    }
+                }
+
+                .comments {
+                    text-align: center;
+                    color: $font-color-light-1;
+                    font-size: $font-size-12;
+
+                    @include l-device {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

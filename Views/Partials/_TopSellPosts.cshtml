@@ -1,0 +1,20 @@
+﻿@model TopSellPostsViewModel
+
+@if (Model != null)
+{
+    <section class="topsellpost-section">
+        <div class="topsell-posts">
+            <div class="container">
+
+            @if (Model.ProductItems != null)
+            {
+                @foreach (var item in Model.ProductItems)
+                {
+                    <partial name="/Views/Partials/_Card.cshtml" model="item" />
+                }
+            }
+
+        </div>
+    </div>
+    </section>
+}

@@ -1,0 +1,85 @@
+﻿@model ProductViewModel
+@using System.Text.RegularExpressions
+
+@if ((Model.Type == ProductViewModel.ProductType.Type1))
+{
+    <div class="generic-card-item">
+        <a href="@Url.Action("Details", "Products", new { sku = Model.SKU })">
+        <img class="card-img-top" src="data:@(Model.ImageMimeType);base64,@(Model.ImageBase64)" alt="@Model.ProductName" />
+        <div class="card-body">
+
+         @if (Model.IsTitleCenter)
+            {
+                <h5 class="card-title-center">@Model.ProductName</h5>
+            }
+            else
+            {
+                <h5 class="card-title">@Model.ProductName</h5>
+            }
+
+            @if (Model.Price.IsDiscountPrice)
+            {
+                <div class="card-text-with-icon">
+                    @if (Model.Price.IsOriginalPrice)
+                    {
+                        <p class="card-original-price">@Model.Price.OriginalPrice?.ToString("C")</p>
+                    }
+                    <p class="card-discount-price">@Model.Price.DiscountPrice?.ToString("C")</p>
+
+                    @if (Model.IsIcon)
+                    {
+                        <i class="fa-solid fa-cart-plus"></i>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="card-text">
+                <p class="card-ordinary-price">@Model.Price.OrdinaryPrice?.ToString("C")</p>
+
+                    @if (Model.IsIcon)
+                    {
+                        <i class="fa-solid fa-cart-plus"></i>
+                    }
+                </div>
+            }
+        </div>
+        </a>
+    </div>
+}
+
+
+else if (Model.Type == ProductViewModel.ProductType.Type2)
+{
+    <div class="generic-card-item">
+        <a href="@Url.Action("Details", "Products", new { sku = Model.SKU })">
+        <div class="card-body">
+            <p class="sales-headline">@Model.Headline</p>
+            <p class="sales-title">@Model.SalesTitle</p>
+            <p class="sales-ingress">@Model.Ingress</p>
+            <p class="sales-text">
+                @Model.Text
+            </p>
+            <a class="sales-link" href="#">@Model.Link</a>
+        </div>
+        </a>
+    </div>
+}
+else if (Model.Type == ProductViewModel.ProductType.Type3)
+{
+    <div class="generic-card-item">
+        <a href="@Url.Action("Details", "Products", new { sku = Model.SKU })">
+        <img class="card-img-top" src="data:@(Model.ImageMimeType);base64,@(Model.ImageBase64)" alt="@Model.ProductName" />
+        <div class="card-body">
+            <h3 class="card-title">@Model.ProductName</h3>
+            <div class="card-description">
+                <p class="post">@Model.Description</p>
+            </div>
+            <div class="card-description">
+                <p class="author">Post by: @Model.Author</p>
+                <p class="comments">Comments @Model.Comments</p>
+            </div>
+        </div>
+        </a>
+    </div>
+}

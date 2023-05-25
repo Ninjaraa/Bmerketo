@@ -1,0 +1,17 @@
+footer {
+    margin-top: $spacing-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $font-color-dark;
+    padding: $spacing-small $spacing-small;
+    height: auto;
+
+    .copyright {
+        font-family: $font-poppins;
+        margin: $spacing-small $spacing-small;
+        color: $font-color-light;
+        text-align: center;
+    }
+}

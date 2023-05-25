@@ -1,0 +1,79 @@
+.sales-section {
+    background-color: $color-pink;
+    margin-top: $spacing-large;
+
+    .container {
+        padding: $spacing-xlarge $spacing-xlarge;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .sales-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            grid-template-rows: auto;
+            gap: 40px;
+
+            @include tablet {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include l-device {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .product-left {
+            grid-column: 1 / span 1;
+        }
+
+        .generic-card-item {
+            grid-column: 2 / span 1;
+        }
+
+        .product-right {
+            grid-column: 3 / span 1;
+        }
+
+        .sales-headline {
+            padding-top: $spacing-medium;
+            text-align: center;
+            font-family: $font-poppins;
+            color: $color-red;
+            font-size: $font-size-18;
+            font-weight: $font-weight-bold;
+        }
+
+        .sales-title {
+            text-align: center;
+            font-family: $font-playfair;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-48;
+            color: $font-color-dark;
+        }
+
+        .sales-ingress {
+            text-align: center;
+            font-family: $font-poppins;
+            color: $font-color-dark;
+            font-size: $font-size-24;
+            font-weight: $font-weight-bold;
+        }
+
+        .sales-text {
+            text-align: center;
+            margin-top: $spacing-small;
+            font-family: $font-roboto;
+            color: $color-dark-3;
+            font-size: $font-size-base;
+            font-weight: $font-weight-regular;
+        }
+
+        .sales-link {
+            text-align: center;
+            display: block;
+            padding-top: $spacing-small;
+            color: $font-color-dark;
+        }
+    }
+}

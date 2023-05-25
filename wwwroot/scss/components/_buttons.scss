@@ -1,0 +1,239 @@
+.btn-toggle {
+    font-family: $font-poppins;
+    font-size: 1.8em;
+    padding: 0 !important;
+    background-color: transparent;
+    border: none !important;
+
+    &:hover {
+        color: $color-dark-1 !important;
+        background-color: transparent !important;
+    }
+}
+
+.btn-toggle-white {
+    font-family: $font-poppins;
+    font-size: 1.8em;
+    padding: 0 !important;
+    background-color: transparent;
+    border: none !important;
+
+    &:hover {
+        color: $color-dark-3 !important;
+        background-color: transparent !important;
+    }
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    transition: all 0.25s ease-in-out;
+
+    .btn-loaditems {
+        padding: 5px 10px;
+        color: #AEAEAE;
+        text-align: center;
+    }
+}
+
+.btn-outline-dark {
+    font-family: $font-poppins;
+    padding: 10px 25px;
+    border: 0px solid $color-white;
+    background-color: transparent;
+    color: $color-white;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+        border: 0px solid $font-color-dark;
+        background-color: transparent;
+        color: $color-white;
+    }
+}
+
+button {
+    padding: $spacing-xsmall $spacing-medium;
+    font-family: $font-poppins;
+    border: 1px solid $color-dark-1;
+    background-color: transparent;
+    color: $color-dark-1;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: $font-color-dark;
+        color: $color-white;
+    }
+}
+
+.btn-theme {
+    font-family: $font-poppins;
+    padding: 10px 35px;
+    border: 1px solid $color-red;
+    background-color: $color-red;
+    color: $color-white;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+        border: 1px solid $font-color-dark;
+        background-color: $font-color-dark;
+        color: $color-white;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.btn-load {
+    margin: $spacing-large;
+    width: auto;
+    height: auto;
+    background-color: $color-white;
+    color: $font-color-dark;
+
+    i {
+        font-size: $font-size-14;
+        padding-left: $spacing-small;
+    }
+
+    &:hover {
+        border: none;
+        background-color: $color-red;
+        color: $color-white;
+    }
+}
+
+.btn-subscribe {
+    background-color: $color-red;
+    color: $color-white;
+    height: 46px;
+    position: relative;
+    top: 0;
+    right: 0;
+    border-radius: 25px;
+    border: 1px solid $font-color-lighter;
+
+    @include l-device {
+        position: absolute;
+        margin-left: 15px;
+    }
+
+    &:hover {
+        background-color: $font-color-dark;
+    }
+}
+
+.btn-shop {
+    padding: $spacing-xsmall $spacing-medium;
+    font-family: $font-poppins;
+    border: 1px solid $color-dark-1;
+    background-color: transparent;
+    color: $color-dark-1;
+    transition: all 0.2s;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $font-color-dark;
+        color: $color-white;
+    }
+
+    border: none;
+    background-color: $color-red;
+    color: $color-white;
+}
+
+.product-card-btn {
+    display: none;
+    height: 46px;
+    background-color: $color-red;
+    font-size: $font-size-base;
+    text-align: center;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    border: none;
+
+    &:hover {
+        color: $color-white;
+        text-decoration: none;
+    }
+
+    @include desktop {
+        display: block;
+    }
+}
+
+.add-cart-btn {
+    display: none;
+    height: 46px;
+    background-color: $color-red;
+    font-size: $font-size-base;
+    text-align: center;
+    color: $color-white;
+    font-weight: $font-weight-regular;
+    border: none;
+
+    &:hover {
+        color: $color-white;
+        text-decoration: none;
+    }
+
+    @include desktop {
+        display: block;
+    }
+}
+
+.add-wishlist-btn {
+    margin-top: $spacing-small;
+    width: 194px;
+    padding: $spacing-xsmall $spacing-medium;
+    font-family: $font-poppins;
+    border: 1px solid $color-dark-1;
+    background-color: transparent;
+    color: $color-dark-1;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: $font-color-dark;
+        color: $color-white;
+    }
+}
+
+.product-details-button {
+    padding: $spacing-xsmall $spacing-medium;
+    font-family: $font-poppins;
+    border: 1px solid $font-color-light-1;
+    background-color: transparent;
+    color: $color-dark-1;
+    transition: all 0.2s;
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: $color-red;
+        border: 1px solid $color-white;
+    }
+}
+
+.change-info-btn {
+    padding: $spacing-xsmall $spacing-xsmall;
+    font-family: $font-poppins;
+    font-size: $font-size-14;
+    border: 1px solid $font-color-light-1;
+    background-color: transparent;
+    color: $color-dark-1;
+    transition: all 0.2s;
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: $color-red;
+        border: 1px solid $color-white;
+        color: $color-white;
+    }
+}

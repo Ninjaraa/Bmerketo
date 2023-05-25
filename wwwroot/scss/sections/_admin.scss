@@ -1,0 +1,52 @@
+﻿.admin-section {
+    margin-top: $spacing-large;
+
+    .container {
+        background-color: $color-white;
+
+        h1 {
+            color: $font-color-dark;
+            font-family: $font-roboto;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid $border-color;
+        }
+
+        th {
+            background-color: $color-gray;
+            color: $color-white;
+        }
+
+        a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: $font-color-dark;
+
+            &:hover {
+                background-color: $color-white;
+                color: $color-red;
+            }
+        }
+
+        .new-user {
+            margin-top: $spacing-small;
+            text-align: center;
+
+            i {
+                margin-right: $spacing-xsmall;
+            }
+        }
+    }
+}

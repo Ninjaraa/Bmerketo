@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/style.css",
+    "inputFile": "wwwroot/scss/style.scss"
+  },
+  {
+    "outputFile": "wwwroot/js/site.es5.js",
+    "inputFile": "wwwroot/js/site.js"
+  },
+  {
+    "outputFile": "wwwroot/js/formvalidation.es5.js",
+    "inputFile": "wwwroot/js/formvalidation.js"
+  }
+]

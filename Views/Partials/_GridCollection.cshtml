@@ -1,0 +1,40 @@
+﻿@model GridCollectionViewModel
+
+@if (Model != null)
+{
+    <section class="collection-section">
+        <div class="container">
+            <h1>@Model.Title</h1>
+
+            @if (Model.Categories != null)
+            {
+                <ul class="categories">
+                    @foreach (var category in Model.Categories)
+                    {
+                        <li class="category-item">@category</li>
+                    }
+                </ul>
+            }
+
+            <div class="collection-cards">
+
+                @if (Model.ProductItems != null)
+                {
+                    @foreach (var item in Model.ProductItems)
+                    {
+                            <partial name="/Views/Partials/_Card.cshtml" model="item" />
+                    }
+
+                }
+
+            </div>
+
+            @if (Model.IsLast)
+            {
+                <div class="collection-wrapper">
+                    <button class="btn-load" href="@Model.LoadMoreUrl">LOAD MORE<i class="fa-solid fa-rotate-right"></i></button>
+                </div>
+            }
+    </div>
+    </section>
+}

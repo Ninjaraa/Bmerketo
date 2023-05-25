@@ -1,0 +1,63 @@
+.showcase-section {
+    background-color: $color-theme;
+    padding: $spacing-large $zero;
+
+    @include l-device {
+        padding: $zero $zero $spacing-large $zero;
+    }
+
+    .container {
+        display: block;
+        text-align: center;
+
+        @include l-device {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .info-box {
+
+        @include l-device {
+            flex: 2;
+            text-align: left;
+            padding-right: $spacing-medium;
+        }
+
+        .subhead {
+            font-size: $font-size-18;
+            margin-bottom: $spacing-small;
+        }
+
+        .headline {
+            font-family: $font-poppins;
+            font-size: $font-size-40;
+            font-weight: $font-weight-bold;
+            margin-bottom: $spacing-small;
+
+            @include l-device {
+                font-size: $font-size-60;
+                margin-bottom: $spacing-large;
+            }
+
+            .subheadline {
+                display: block;
+            }
+        }
+    }
+}
+
+.showcase-img {
+    display: none;
+
+    @include l-device {
+        flex: 1;
+        display: block;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

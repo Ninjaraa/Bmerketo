@@ -1,0 +1,35 @@
+﻿.all-products {
+    margin-top: $spacing-large;
+    background-color: $color-white;
+
+    .new-product, a {
+        text-align: center;
+        font-family: $font-poppins;
+        font-size: $font-size-19;
+        color: $font-color-dark;
+        text-decoration: none;
+        font-weight: $font-weight-medium;
+
+        i {
+            margin-right: $spacing-xsmall;
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card {
+        border: none;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .card-img-top {
+        width: auto;
+        height: auto;
+        border-radius: $zero;
+    }
+}

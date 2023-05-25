@@ -1,0 +1,15 @@
+.map-section {
+    margin-top: $spacing-large;
+
+    .container {
+        margin-bottom: $spacing-medium;
+
+            .google-map {
+                border: $zero;
+                width: 100%;
+                height: 380px;
+                margin-top: $spacing-medium;
+                margin-bottom: $spacing-medium;
+            }
+        }
+    }

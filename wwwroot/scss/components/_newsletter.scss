@@ -1,0 +1,55 @@
+.newsletter-section {
+    padding: 30px 20px;
+    z-index: -1;
+    margin-top: $spacing-large;
+    background-color: #e1e1e1;
+
+    @include mobile {
+        padding: 50px 20px;
+    }
+
+    @include desktop-l {
+        padding: 80px 20px;
+    }
+
+    .container {
+        background-color: $color-white;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+
+        @include l-device {
+            padding: 70px 50px;
+        }
+
+        @include desktop-l {
+            padding: 70px 100px;
+        }
+    }
+
+    .newsletter-form {
+        width: 100%;
+        position: relative;
+        z-index: 0;
+
+        input {
+            position: relative;
+            height: 46px;
+            width: 100%;
+            border-radius: 25px;
+            border: 1px solid $font-color-lighter;
+            padding: 0 0 0 20px;
+            outline: 0;
+
+            &:focus {
+                border: 1px solid $color-dark-4;
+            }
+
+            @include mobile {
+                padding: 0 0 0 40px;
+            }
+        }
+    }
+}

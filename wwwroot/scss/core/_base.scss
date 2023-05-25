@@ -1,0 +1,57 @@
+html,
+body {
+    font-size: $font-size-base;
+    font-family: $font-roboto;
+    font-weight: $font-weight-regular;
+    color: $font-color-dark;
+    line-height: $lineheight;
+}
+
+.open-menu {
+    width: 100vw !important;
+    opacity: 0.99;
+    transform: translateX(-100%);
+}
+
+.invalid {
+    border: 1px solid $color-red !important;
+} 
+
+a {
+    text-decoration: none;
+    color: $font-color-dark;
+
+    &:hover {
+        text-decoration: underline;
+        color: $font-color-dark;
+    }
+}
+
+p {
+    font-family: $font-poppins;
+    font-size: $font-size-18;
+    color: $font-color-dark;
+}
+
+.position-static {
+    position: static;
+}
+
+.position-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.validation-summary-errors {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}

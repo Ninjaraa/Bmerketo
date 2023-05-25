@@ -1,0 +1,75 @@
+﻿@model ContactIndexViewModel
+
+@{
+    ViewData["Title"] = "Contact us";
+}
+
+<section class="contactform">
+    <div class="container">
+        <form method="post" enctype="multipart/form-data" novalidate>
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="FirstName">First name*</label>
+                <input asp-for="FirstName" class="form-control" autocomplete="off" onkeyup="validateTextInputField(event)" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="LastName">Last name*</label>
+                <input asp-for="LastName" class="form-control" autocomplete="off" onkeyup="validateTextInputField(event)" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email">Email*</label>
+                <input asp-for="Email" id="Email" class="form-control" autocomplete="off" onkeyup="validateEmailInputField(event)" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Mobile">Mobile (optional)</label>
+                <input asp-for="Mobile" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Company">Company (optional)</label>
+                <input asp-for="Company" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label asp-for="Message">Message*</label>
+                        <textarea class="form-control" name="Message" rows="5" autocomplete="off" onkeyup="validateLongTextInputField(event)"></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <label asp-for="SaveLogIn" class="form-check-label">Save my name, email and website in this browser for the next time I comment</label>
+                <input asp-for="SaveLogIn" type="checkbox" class="form-check-input" />
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn-theme">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="map-section">
+    <div class="container">
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2036.2784614536006!2d18.07719277787686!3d59.31160701243846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77a7a9dd96e7%3A0xf9c011aeef928f78!2sBAR%20NINJA!5e0!3m2!1ssv!2sse!4v1685018316736!5m2!1ssv!2sse"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>

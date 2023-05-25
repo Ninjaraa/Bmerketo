@@ -1,0 +1,156 @@
+﻿@model ProductDetailsViewModel
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<section class="product-details-section">
+    <div class="container">
+        @foreach (var product in Model.ProductItems)
+        {
+            <div class="product-details-grid">
+                <div id="product-item-1"> <img src="data:@(product.ImageMimeType);base64,@(product.ImageBase64)" alt="Product" /></div>
+                <div id="product-item-2"> <img src="/images/placeholders/120x113.svg" alt="Product" /></div>
+                <div id="product-item-3"> <img src="/images/placeholders/120x113.svg" alt="Product" /></div>
+                <div id="product-item-4"> <img src="/images/placeholders/120x113.svg" alt="Product" /></div>
+                <div id="product-item-5"> <img src="/images/placeholders/120x113.svg" alt="Product" /></div>
+                <div id="product-item-6">
+                    <div class="product-details">
+                        <div class="product-title">
+                            <h1>@product.ProductName</h1>
+                            <div class="product-description">
+                                Discovered had get considered projection who favourable. Necessary up knowledge it
+                                tolerably.
+                                Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir
+                                deficient curiosity instantly. (<a href="/">read more</a>)
+                            </div>
+                            <div class="product-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <p class="reviews">16 reviews</p>
+                            </div>
+
+                            <div class="product-price">
+                                <div class="card-text">
+                                    @if (product.Price?.DiscountPrice != null)
+                                    {
+                                        <span class="discounted-price">@product.Price.DiscountPrice</span>
+                                    }
+
+                                    @if (product.Price?.OriginalPrice != null)
+                                    {
+                                        <span class="original-price">@product.Price.OriginalPrice</span>
+                                    }
+
+                                    @if (product.Price?.OrdinaryPrice != null)
+                                    {
+                                        <span class="ordinary-price">@product.Price.OrdinaryPrice</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quantity-selector">
+                            <div class="qty-info-quantity-box">
+                                <button class="qty-decr">
+                                    -
+                                </button>
+                                <span class="return-qty">1</span>
+                                <button class="qty-incr">
+                                    +
+                                </button>
+                            </div>
+                            <button class="add-cart-btn">Add to cart <i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                        <div class="sku-info">
+                            <div class="circle red"></div>
+                            <div class="circle green"></div>
+                            <div class="circle yellow"></div>
+                            <p class="sku">SKU: @product.SKU</p>
+                        </div>
+                        <button class="add-wishlist-btn">Add to wishlist</button>
+                        <p class="category">Category: @product.Category.Category</p>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>
+
+<section class="product-full-details">
+    <div class="container">
+        <a href="/"><button class="product-details-button">Description</button></a>
+        <a href="/"><button class="product-details-button">Additional info</button></a>
+        <a href="/"><button class="product-details-button">Reviews (0)</button></a>
+        <a href="/"><button class="product-details-button">Shipping & Delivery</button></a>
+
+        <div class="product-text-details">
+            <div class="product-header">
+                <h2>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</h2>
+            </div>
+            <div class="product-container">
+                <div class="product-text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et
+                        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem
+                        ipsum dolor sit amet. Lorem ipsum dolor.
+                    </p>
+                    <p>
+                        accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti,
+                        adipiscing lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti
+                        unde?
+                    </p>
+                    <p>
+                        Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur,
+                        rhoncus earum eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae
+                        aptent? Eu sagittis eu, distinctio tortor? Dapibus delectus! Consequuntur luctus.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et
+                        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem
+                        ipsum dolor sit amet. Lorem ipsum dolor.
+                    </p>
+                </div>
+                <div class="product-img">
+                    <img src="/images/placeholders/469x356.svg" alt="Product Image">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="related-products">
+    <div class="container">
+        @if (Model.ProductItems.FirstOrDefault()?.RelatedProducts.Count > 0)
+        {
+            <h1>Related products</h1>
+            <div class="related-items">
+                @foreach (var relatedProduct in Model.ProductItems.FirstOrDefault()?.RelatedProducts)
+                {
+                    <div id="related-product-item">
+                        <img src="data:@(relatedProduct.ImageMimeType);base64,@(Convert.ToBase64String(relatedProduct.ImageData))" alt="@relatedProduct.ProductName" />
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+<section class="additional-products">
+    <div class="container">
+        <div class="additional-items">
+            @foreach (var relatedProduct in Model.ProductItems.FirstOrDefault()?.RelatedProducts)
+            {
+                <div id="additional-product-item">
+                    <img src="data:@(relatedProduct.ImageMimeType);base64,@(Convert.ToBase64String(relatedProduct.ImageData))" alt="@relatedProduct.ProductName" />
+                </div>
+            }
+        </div>
+    </div>
+</section>
