@@ -17,19 +17,21 @@
 
     .container {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
+        flex-wrap: wrap;
+        justify-content: center;
 
-    .card {
-        border: none;
-        padding: 20px;
-        background-color: #fff;
-    }
+        .card {
+            border: none;
+            padding: 20px;
+            background-color: #fff;
+            flex-basis: 25%;
+            box-sizing: border-box;
+        }
 
-    .card-img-top {
-        width: auto;
-        height: auto;
-        border-radius: $zero;
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            border-radius: $zero;
+        }
     }
 }

@@ -87,64 +87,6 @@ namespace WebApp.Controllers
             return View(model);
         }
 
-        // HttpGet to display user information in the admin view
-        [HttpGet]
-        public IActionResult CreateUser()
-        {
-            var roles = _roleManager.Roles.Select(r => new SelectListItem
-            {
-                Text = r.Name,
-                Value = r.Name
-            }).ToList();
-
-            var model = new CreateUserViewModel
-            {
-                AvailableRoles = roles
-            };
-
-            return View(model);
-        }
-
-        // HttpPost to create a new user from the admin view
-        [HttpPost]
-        public async Task<IActionResult> CreateUser(CreateUserViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new AppUser
-                {
-                    UserName = model.Email,
-                    Email = model.Email,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName
-                };
-
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    await _userManager.AddToRolesAsync(user, model.Roles);
-
-                    return RedirectToAction("Index");
-                }
-
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
-                }
-            }
-
-            var roles = _roleManager.Roles.Select(r => new SelectListItem
-            {
-                Text = r.Name,
-                Value = r.Name,
-                Selected = model.Roles.Contains(r.Name)
-            }).ToList();
-            model.AvailableRoles = roles;
-
-            return View(model);
-        }
-
-
         // HttpPost for editing a users role, and/or password
         [HttpPost]
         public async Task<IActionResult> EditUser(UserEditViewModel model)
@@ -205,6 +147,63 @@ namespace WebApp.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+        //HttpGet to display user information in the admin view
+       [HttpGet]
+        public IActionResult CreateUser()
+        {
+            var roles = _roleManager.Roles.Select(r => new SelectListItem
+            {
+                Text = r.Name,
+                Value = r.Name
+            }).ToList();
+
+            var model = new CreateUserViewModel
+            {
+                AvailableRoles = roles
+            };
+
+            return View(model);
+        }
+
+        //HttpPost to create a new user from the admin view
+       [HttpPost]
+        public async Task<IActionResult> CreateUser(CreateUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new AppUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRolesAsync(user, model.Roles);
+
+                    return RedirectToAction("Index");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+
+            var roles = _roleManager.Roles.Select(r => new SelectListItem
+            {
+                Text = r.Name,
+                Value = r.Name,
+                Selected = model.Roles.Contains(r.Name)
+            }).ToList();
+            model.AvailableRoles = roles;
+
+            return View(model);
         }
     }
 }

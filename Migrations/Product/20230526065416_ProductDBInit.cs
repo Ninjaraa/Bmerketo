@@ -7,28 +7,11 @@
 namespace WebApp.Migrations.Product
 {
     /// <inheritdoc />
-    public partial class InitProductDB : Migration
+    public partial class ProductDBInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "ProductItems",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SKU = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
-                    ImageData = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
-                    ImageMimeType = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductItems", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "ProductCategories",
                 columns: table => new
@@ -41,12 +24,29 @@ namespace WebApp.Migrations.Product
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductCategories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SKU = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
+                    ImageData = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    ImageMimeType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductCategoryEntityId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductCategories_ProductItems_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "ProductItems",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_ProductItems_ProductCategories_ProductCategoryEntityId",
+                        column: x => x.ProductCategoryEntityId,
+                        principalTable: "ProductCategories",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -136,6 +136,11 @@ namespace WebApp.Migrations.Product
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProductItems_ProductCategoryEntityId",
+                table: "ProductItems",
+                column: "ProductCategoryEntityId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ProductPrices_ProductId",
                 table: "ProductPrices",
                 column: "ProductId",
@@ -155,13 +160,22 @@ namespace WebApp.Migrations.Product
                 name: "IX_Tags_ProductEntityId",
                 table: "Tags",
                 column: "ProductEntityId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_ProductCategories_ProductItems_ProductId",
+                table: "ProductCategories",
+                column: "ProductId",
+                principalTable: "ProductItems",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ProductCategories");
+            migrationBuilder.DropForeignKey(
+                name: "FK_ProductCategories_ProductItems_ProductId",
+                table: "ProductCategories");
 
             migrationBuilder.DropTable(
                 name: "ProductPrices");
@@ -174,6 +188,9 @@ namespace WebApp.Migrations.Product
 
             migrationBuilder.DropTable(
                 name: "ProductItems");
+
+            migrationBuilder.DropTable(
+                name: "ProductCategories");
         }
     }
 }

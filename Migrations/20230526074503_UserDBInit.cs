@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebApp.Migrations
 {
     /// <inheritdoc />
-    public partial class InitUserDB : Migration
+    public partial class UserDBInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

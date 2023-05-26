@@ -12,8 +12,8 @@ using WebApp.Contexts;
 namespace WebApp.Migrations.Product
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20230524081604_RelatedProducts")]
-    partial class RelatedProducts
+    [Migration("20230526065416_ProductDBInit")]
+    partial class ProductDBInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

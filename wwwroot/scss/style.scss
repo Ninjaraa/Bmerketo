@@ -2,29 +2,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
 
 // Core
-@import "./core/variables";
-@import "./core/mixins";
-@import "./core/base";
-@import "./components/buttons";
+@import "./core/_variables.scss";
+@import "./core/_mixins.scss";
+@import "./core/_base.scss";
+@import "./components/_buttons.scss";
 
 // Navigation
-@import "./components/navigation/header";
-@import "./components/navigation/footer";
+@import "./components/navigation/_header.scss";
+@import "./components/navigation/_footer.scss";
 
 // Components
-@import "./components/carditem.scss";
-@import "./components/map";
-@import "./components/newsletter";
-@import "./components/breadcrumb";
-@import "./components/forms";
+@import "./components/_carditem.scss";
+@import "./components/_map.scss";
+@import "./components/_newsletter.scss";
+@import "./components/_breadcrumb.scss";
+@import "./components/_forms.scss";
 
 // Sections
-@import "./sections/showcase.scss";
-@import "./sections/collection";
-@import "./sections/sales";
-@import "./sections/topsell";
-@import "./sections/topsellposts.scss";
-@import "./sections/productdetails";
-@import "./sections/account.scss";
-@import "./sections/admin.scss";
-@import "./sections/allproducts.scss";
+@import "./sections/_showcase.scss";
+@import "./sections/_collection.scss";
+@import "./sections/_sales.scss";
+@import "./sections/_topsell.scss";
+@import "./sections/_topsellposts.scss";
+@import "./sections/_allproducts.scss";
+@import "./sections/_productdetails.scss";
+@import "./sections/_account.scss";
+@import "./sections/_admin.scss";

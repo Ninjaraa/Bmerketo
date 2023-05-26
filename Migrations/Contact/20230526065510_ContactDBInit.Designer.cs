@@ -12,8 +12,8 @@ using WebApp.Contexts;
 namespace WebApp.Migrations.Contact
 {
     [DbContext(typeof(ContactContext))]
-    [Migration("20230523132250_InitContactDB")]
-    partial class InitContactDB
+    [Migration("20230526065510_ContactDBInit")]
+    partial class ContactDBInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

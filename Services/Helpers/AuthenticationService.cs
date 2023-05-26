@@ -26,7 +26,14 @@ namespace WebApp.Services.Helpers
         // All others will be assigned the role "user"
         public async Task<bool> RegisterUserAsync(UserSignUpViewModel viewModel)
         {
-            AppUser appUser = viewModel;
+            AppUser appUser = new AppUser
+            {
+                FirstName = viewModel.FirstName,
+                LastName = viewModel.LastName,
+                UserName = viewModel.Email, // Set the email as the username since its mandatory in Identity
+                Email = viewModel.Email,
+                PhoneNumber = viewModel.PhoneNumber
+            };
             var roleName = "User";
 
             if (!await _roleManager.Roles.AnyAsync())
@@ -41,6 +48,8 @@ namespace WebApp.Services.Helpers
             }
 
             var result = await _userManager.CreateAsync(appUser, viewModel.Password);
+            appUser.Email = viewModel.Email;
+
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(appUser, roleName);

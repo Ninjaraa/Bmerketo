@@ -5,7 +5,7 @@
 namespace WebApp.Migrations.Contact
 {
     /// <inheritdoc />
-    public partial class InitContactDB : Migration
+    public partial class ContactDBInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

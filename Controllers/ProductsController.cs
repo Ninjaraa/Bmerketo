@@ -130,7 +130,7 @@ namespace WebApp.Controllers
         }
 
         // Used on the product detail page to display the right product.
-        // If more time: build the method to also work with adding "additional products" based on the TagId.
+        // If more time: build the method to also work with adding "additional products" based on the TagId instead of Category.
         public async Task<IActionResult> Details(string sku)
         {
             if (!string.IsNullOrEmpty(sku))

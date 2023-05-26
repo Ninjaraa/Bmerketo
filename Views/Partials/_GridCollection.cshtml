@@ -17,16 +17,17 @@
             }
 
             <div class="collection-cards">
-
                 @if (Model.ProductItems != null)
                 {
-                    @foreach (var item in Model.ProductItems)
-                    {
-                            <partial name="/Views/Partials/_Card.cshtml" model="item" />
-                    }
-
+                    <div class="row">
+                        @foreach (var item in Model.ProductItems)
+                        {
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <partial name="/Views/Partials/_Card.cshtml" model="item" />
+                            </div>
+                        }
+                    </div>
                 }
-
             </div>
 
             @if (Model.IsLast)
@@ -35,6 +36,6 @@
                     <button class="btn-load" href="@Model.LoadMoreUrl">LOAD MORE<i class="fa-solid fa-rotate-right"></i></button>
                 </div>
             }
-    </div>
+        </div>
     </section>
 }
