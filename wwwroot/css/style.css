@@ -1039,17 +1039,29 @@ footer .copyright {
   flex-wrap: wrap;
   justify-content: center;
 }
-.all-products .container .card {
+.all-products .card {
   border: none;
   padding: 20px;
   background-color: #fff;
   flex-basis: 25%;
   box-sizing: border-box;
 }
-.all-products .container .card-img-top {
-  width: 100%;
-  height: auto;
+.all-products .card-img-top {
+  width: auto;
+  height: 300px;
   border-radius: 0;
+}
+.all-products .discounted-price del {
+  text-decoration: line-through;
+}
+.all-products .edit-product {
+  text-align: left;
+  margin-left: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #292929;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .product-details-section {

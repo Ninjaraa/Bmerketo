@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using WebApp.Models;
 
 namespace WebApp.ViewModels
@@ -34,10 +33,9 @@ namespace WebApp.ViewModels
         public byte[]? ProductImage { get; set; }
         public string? ImageMimeType { get; set; }
         public IFormFile? Image { get; set; }
+
         public List<string> Tags { get; set; } = new List<string>();
-
-        public int TagId { get; set; }
-
+        public List<string> SelectedTags { get; set; } = new List<string>();
         public List<ProductModel> ProductItems { get; set; } = new List<ProductModel>();
     }
 }

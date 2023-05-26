@@ -10,5 +10,7 @@ namespace WebApp.ViewModels
         public ProductType Type { get; set; }
         public List<ProductModel> ProductItems { get; set; } = new List<ProductModel>();
 
+        public List<ProductViewModel> SalesCard { get; set; } = new List<ProductViewModel>();
+
     }
 }

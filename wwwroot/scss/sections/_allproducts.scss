@@ -19,19 +19,33 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
 
-        .card {
-            border: none;
-            padding: 20px;
-            background-color: #fff;
-            flex-basis: 25%;
-            box-sizing: border-box;
-        }
+    .card {
+        border: none;
+        padding: 20px;
+        background-color: #fff;
+        flex-basis: 25%;
+        box-sizing: border-box;
+    }
 
-        .card-img-top {
-            width: 100%;
-            height: auto;
-            border-radius: $zero;
-        }
+    .card-img-top {
+        width: auto;
+        height: 300px;
+        border-radius: $zero;
+    }
+
+    .discounted-price del {
+        text-decoration: line-through;
+    }
+
+    .edit-product {
+        text-align: left;
+        margin-left: 1rem;
+        font-family: $font-poppins;
+        font-size: $font-size-base;
+        color: $font-color-dark;
+        text-decoration: none;
+        font-weight: $font-weight-medium;
     }
 }

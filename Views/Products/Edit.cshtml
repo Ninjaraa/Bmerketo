@@ -27,7 +27,7 @@
                     @foreach (var tag in Model.Tags)
                     {
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="tag-@tag" name="tags" value="@tag">
+                            <input class="form-check-input" type="checkbox" id="tag-@tag" name="SelectedTags" value="@tag" @(Model.SelectedTags.Contains(tag) ? "checked" : "")>
                             <label class="form-check-label" for="tag-@tag">
                                 @tag
                             </label>

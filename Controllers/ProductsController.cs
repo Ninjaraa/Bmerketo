@@ -99,7 +99,8 @@ namespace WebApp.Controllers
                 OrdinaryPrice = product.Price.OrdinaryPrice,
                 OriginalPrice = product.Price.OriginalPrice,
                 Category = product.Category.Category,
-                Tags = product.Tags.ToList(),
+                Tags = _productContext.Tags.Select(t => t.TagName).ToList(),
+                SelectedTags = product.Tags.ToList()
             };
 
             return View(viewModel);
